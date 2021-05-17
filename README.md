@@ -19,6 +19,14 @@ protected $middleware = [
 
 **Please make sure your users have the proper permissions to edit/unpublish the homepage.**
 
+## Installing
+
+You can clone, copy the zip or do it via
+
+```
+php artisan twill:capsule:install homepages
+```
+
 ## Navigation
 
 Add this to `twill-navigation.php` to make your homepage link go directly to the edit page:
