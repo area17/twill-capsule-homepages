@@ -2,7 +2,7 @@
 
 namespace App\Twill\Capsules\Homepages\Http\Controllers;
 
-use App\Twill\Base\ModuleController;
+use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Twill\Capsules\Homepages\Repositories\HomepageRepository;
 
 class HomepageController extends ModuleController

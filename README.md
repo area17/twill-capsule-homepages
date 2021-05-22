@@ -27,6 +27,12 @@ You can clone, copy the zip or do it via
 php artisan twill:capsule:install homepages
 ```
 
+Create a `front.home` route to your homepage:
+
+``` php
+Route::get('/', 'Homepage@show')->name('front.home');
+```
+
 ## Navigation
 
 Add this to `twill-navigation.php` to make your homepage link go directly to the edit page:

@@ -24,7 +24,9 @@ class CreateHomepagesTables extends Migration
 
             $table->text('description')->nullable();
 
-            create_seo_fields($table);
+            $table->string('seo_title')->nullable();
+
+            $table->string('seo_description')->nullable();
         });
 
         Schema::create('homepage_slugs', function (Blueprint $table) {
