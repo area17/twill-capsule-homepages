@@ -30,7 +30,13 @@ php artisan twill:capsule:install homepages
 Create a `front.home` route to your homepage:
 
 ``` php
-Route::get('/', 'Homepage@show')->name('front.home');
+Route::get('/', fn() => print('This is the homepage'))->name('front.home');
+```
+
+Make sure Twill/Capsules directory exists (bug will be fixed soon): 
+
+``` bash
+mkdir -p app/Twill/Capsules
 ```
 
 ## Navigation
