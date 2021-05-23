@@ -21,6 +21,12 @@ protected $middleware = [
 
 ## Installing
 
+If you are using the `twill:capsule:install`, make sure Twill/Capsules directory exists (bug will be fixed soon):
+
+``` bash
+mkdir -p app/Twill/Capsules
+```
+
 You can clone, copy the zip or do it via
 
 ```
@@ -31,12 +37,6 @@ Create a `front.home` route to your homepage:
 
 ``` php
 Route::get('/', fn() => print('This is the homepage'))->name('front.home');
-```
-
-Make sure Twill/Capsules directory exists (bug will be fixed soon): 
-
-``` bash
-mkdir -p app/Twill/Capsules
 ```
 
 ## Navigation
