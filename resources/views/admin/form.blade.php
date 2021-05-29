@@ -26,19 +26,5 @@
         ])
     </a17-fieldset>
 
-    <a17-fieldset title="SEO" id="SEO" :open="false">
-        @formField('input', [
-            'name' => 'seo_title',
-            'label' => 'SEO title',
-            'translated' => true,
-            'maxlength' => 250
-        ])
-
-        @formField('input', [
-            'name' => 'seo_description',
-            'label' => 'SEO description',
-            'translated' => true,
-            'maxlength' => 250
-        ])
-    </a17-fieldset>
+    @include('admin._components.seo')
 @stop

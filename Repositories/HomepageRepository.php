@@ -2,15 +2,17 @@
 
 namespace App\Twill\Capsules\Homepages\Repositories;
 
-use A17\Twill\Repositories\ModuleRepository;
-use A17\Twill\Repositories\Behaviors\HandleSlugs;
-use A17\Twill\Repositories\Behaviors\HandleFiles;
-use App\Twill\Capsules\Homepages\Models\Homepage;
+use App\Twill\Base\Templates;
+use App\Twill\Base\ModuleRepository;
+use App\Twill\Base\Scopes\MustBePublished;
 use A17\Twill\Repositories\Behaviors\HandleBlocks;
-use A17\Twill\Repositories\Behaviors\HandleMedias;
-use A17\Twill\Repositories\Behaviors\HandleRevisions;
+use App\Transformers\Homepage as HomepageTransformer;
 use A17\Twill\Repositories\Behaviors\HandleTranslations;
-use App\Twill\Capsules\Homepages\Scopes\MustBePublished;
+use A17\Twill\Repositories\Behaviors\HandleSlugs;
+use A17\Twill\Repositories\Behaviors\HandleMedias;
+use A17\Twill\Repositories\Behaviors\HandleFiles;
+use A17\Twill\Repositories\Behaviors\HandleRevisions;
+use App\Twill\Capsules\Homepages\Models\Homepage;
 
 class HomepageRepository extends ModuleRepository
 {
@@ -20,6 +22,10 @@ class HomepageRepository extends ModuleRepository
         HandleMedias,
         HandleFiles,
         HandleRevisions;
+
+    protected string $templateName = Templates::HOMEPAGE;
+
+    protected string $transformerClass = HomepageTransformer::class;
 
     public function __construct(Homepage $model)
     {
@@ -50,7 +56,7 @@ class HomepageRepository extends ModuleRepository
     {
         return app(HomepageRepository::class)->create([
             'title' => [
-                config('translatable.locale') ?? config('app.locale') => config('app.name'),
+                config('translatable.locale') => config('app.name'),
             ],
 
             'published' => true,
