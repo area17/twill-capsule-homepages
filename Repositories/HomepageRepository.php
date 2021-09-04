@@ -2,9 +2,9 @@
 
 namespace App\Twill\Capsules\Homepages\Repositories;
 
-use App\Twill\Base\Templates;
-use App\Twill\Base\ModuleRepository;
-use App\Twill\Base\Scopes\MustBePublished;
+use App\Twill\Capsules\Base\Templates;
+use App\Twill\Capsules\Base\ModuleRepository;
+use App\Twill\Capsules\Base\Scopes\MustBePublished;
 use A17\Twill\Repositories\Behaviors\HandleBlocks;
 use App\Transformers\Homepage as HomepageTransformer;
 use A17\Twill\Repositories\Behaviors\HandleTranslations;
@@ -16,12 +16,7 @@ use App\Twill\Capsules\Homepages\Models\Homepage;
 
 class HomepageRepository extends ModuleRepository
 {
-    use HandleBlocks,
-        HandleTranslations,
-        HandleSlugs,
-        HandleMedias,
-        HandleFiles,
-        HandleRevisions;
+    use HandleBlocks, HandleTranslations, HandleSlugs, HandleMedias, HandleFiles, HandleRevisions;
 
     protected string $templateName = Templates::HOMEPAGE;
 

@@ -2,7 +2,7 @@
 
 namespace App\Twill\Capsules\Homepages\Models;
 
-use App\Twill\Base\Model;
+use App\Twill\Capsules\Base\Model;
 
 class HomepageSlug extends Model
 {
