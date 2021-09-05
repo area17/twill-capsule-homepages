@@ -28,6 +28,7 @@
     },
     "require": {
         "php": "^7.1|^8.0",
+        "composer/installers": "^2.0",
         "area17/twill": "^2.0"
     },
     "minimum-stability": "stable",
