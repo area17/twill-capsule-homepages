@@ -1,0 +1,34 @@
+{
+    "name": "area17/twill-capsule-homepages",
+    "type": "twill-capsule",
+    "license": "Apache-2.0",
+    "description": "A Twill Capsule to create a Homepage for your website",
+    "keywords": [
+        "A17",
+        "twill",
+        "laravel",
+        "cms",
+        "capsules"
+    ],
+    "homepage": "https://twill.io",
+    "authors": [
+        {
+            "name": "AREA 17",
+            "email": "hello@twill.io",
+            "homepage": "https://area17.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ifox/twill/issues/",
+        "docs": "https://twill.io/docs",
+        "chat": "https://discord.link/twill"
+    },
+    "require": {
+        "php": "^7.1|^8.0",
+        "area17/twill": "^2.0"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    }
+}
