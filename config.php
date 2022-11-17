@@ -1,9 +1,11 @@
 <?php
 
 return [
-    'seo' => ['enabled' => true],
-
     'autoload' => [
-        'files' => [__DIR__ . '/../Base/helpers.php'],
+        'files' => [__DIR__ . '/Support/helpers.php'],
+    ],
+    'frontend_prefixes' => [
+        'front.',
+        'api.',
     ],
 ];

@@ -2,8 +2,7 @@
 
 namespace App\Twill\Capsules\Homepages\Models;
 
-use App\Twill\Capsules\Base\Model;
-use App\Twill\Capsules\Homepages\Models\Homepage;
+use A17\Twill\Models\Model;
 
 class HomepageTranslation extends Model
 {

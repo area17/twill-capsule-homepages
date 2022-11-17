@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::module('homepages');
+Route::module('homepages', [], ['except' => ['index']]);
+
+Route::redirect('/homepages', '/homepage');
 
 Route::name('homepages.landing')->get(
     '/homepage',
