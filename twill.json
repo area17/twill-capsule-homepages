@@ -1,9 +1,0 @@
-{
-    "dependencies": {
-        "capsules": [
-            {
-                "capsule": "Base"
-            }
-        ]
-    }
-}

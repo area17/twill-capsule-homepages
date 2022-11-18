@@ -21,22 +21,31 @@ protected $middleware = [
 
 ## Installing
 
-If you are using the `twill:capsule:install`, make sure Twill/Capsules directory exists (bug will be fixed soon):
+Before to use capsules, you need to get a [Laravel](https://laravel.com/docs/9.x/installation) app booted with [Twill](https://github.com/area17/twill) on it.
 
-```bash
-mkdir -p app/Twill/Capsules
-```
-
-You can clone, copy the zip or do it via
+When it's done, you can clone, copy the zip or do it via
 
 ```
-php artisan twill:capsule:install homepages
+php artisan twill:capsule:install homepages --copy
+```
+
+Enable the capsule in your Twill configuration:
+
+```php
+    'capsules' => [
+        'list' => [
+            [
+                'name' => 'Homepages',
+                'enabled' => true
+            ],
+        ]
+    ],
 ```
 
 Create a `front.home` route to your homepage:
 
 ```php
-Route::get('/', fn() => print 'This is the homepage')->name('front.home');
+Route::get('/', fn() => print('This is the homepage'))->name('front.home');
 ```
 
 ## Navigation
@@ -47,23 +56,7 @@ Add this to `twill-navigation.php` to make your homepage link go directly to the
 return [
     'homepages' => [
         'title' => 'Homepage',
-
         'route' => 'admin.homepages.landing',
     ],
-];
-```
-
-## Dependencies
-
--   Depends on the [Twill Capsules Base](https://github.com/area17/twill-capsule-base) repository.
--   Integrated to [Twill Transformers](https://github.com/area17/twill-transformers).
-
-## Crops
-
-A base cropping systems was put in place, so for the block editor you need to configure your `twill.php` to be something like:
-
-```php
-'blocks' => [
-    'crops' => Crops::BLOCK_EDITOR,
-],
+]
 ```
