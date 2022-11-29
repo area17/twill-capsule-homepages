@@ -23,13 +23,13 @@ protected $middleware = [
 
 Before to use capsules, you need to get a [Laravel](https://laravel.com/docs/9.x/installation) app booted with [Twill](https://github.com/area17/twill) on it.
 
-When it's done, you can clone, copy the zip or do it via
+When it's done, you can clone the repo, copy the zip file or do it via
 
-```
+```shell
 php artisan twill:capsule:install homepages --copy
 ```
 
-Enable the capsule in your Twill configuration:
+Next, enable the capsule in your Twill configuration:
 
 ```php
     'capsules' => [
@@ -38,19 +38,17 @@ Enable the capsule in your Twill configuration:
                 'name' => 'Homepages',
                 'enabled' => true
             ],
-        ]
+        ],
     ],
 ```
 
-Create a `front.home` route to your homepage:
+After that, create a `front.home` route to your homepage:
 
 ```php
 Route::get('/', fn() => print('This is the homepage'))->name('front.home');
 ```
 
-## Navigation
-
-Add this to `twill-navigation.php` to make your homepage link go directly to the edit page:
+Finally, add this to `twill-navigation.php` to make your homepage link go directly to the edit page:
 
 ```php
 return [
@@ -60,3 +58,19 @@ return [
     ],
 ]
 ```
+
+## Configuration
+
+If you want to add fields in your homepage table go to `app/Twill/Capsules/Homepages/database/migrations` and modify the `create_homepages_table.php` file.
+
+**Note:** If you want to add a new field to your homepage table, you will need to add it to the `fillable` property of the `App\Twill\Capsules\Homepages\Models\Homepage` model, and to the form in `app/Twill/Capsules/Homepages/resources/views/admin/form.blade.php`.
+
+When you are ready, don't forget to run the migration:
+
+```shell
+php artisan migrate
+```
+
+After that, refresh your admin view, you should see a new entry in your navigation bar.
+
+Go into it and manage your homepage.
